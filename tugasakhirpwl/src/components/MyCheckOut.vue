@@ -109,6 +109,10 @@ export default {
                 total: this.totalPrice
 
             }
+            if(this.isLogin != true){
+              alert('Maaf anda belum Login, silahkan Login dulu')
+              this.$router.push('/login')
+            }
 
             if(this.penerima != "" && this.alamat != ""){
                 db.collection("cart").doc().set(docData).then(() => {
