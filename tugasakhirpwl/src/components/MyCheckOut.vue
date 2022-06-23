@@ -109,7 +109,7 @@ export default {
                 total: this.totalPrice
 
             }
-            if(this.isLogin != true){
+            if(this.isLogin == null){
               alert('Maaf anda belum Login, silahkan Login dulu')
               this.$router.push('/login')
             }
