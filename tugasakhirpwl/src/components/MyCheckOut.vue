@@ -109,19 +109,25 @@ export default {
                 total: this.totalPrice
 
             }
-            if(this.isLogin == null){
-              alert('Maaf anda belum Login, silahkan Login dulu')
-              this.$router.push('/login')
-            }
-
             if(this.penerima != "" && this.alamat != ""){
-                db.collection("cart").doc().set(docData).then(() => {
-                alert("Berhasil melakukan order, Terimakasih")
-            })
+
+                if(this.isLogin == null){
+                    alert('Maaf anda belum Login, silahkan Login dulu')
+                    this.$router.push('/login')
+              }
+              else{
+                  db.collection("cart").doc().set(docData).then(() => {
+                  alert("Berhasil melakukan order, Terimakasih")
+                  this.$router.push('/')
+                  location.reload()
+                  })
+              }
+                
             }
             else{
               alert("Nama penerima atau Alamat masih kosong")
             }
+
 
 
         }
