@@ -16,7 +16,8 @@
             </v-card-text>
             <v-divider light></v-divider>
             <v-card-actions>
-              <v-btn round v-on:click="register()">Sign up</v-btn>
+              <v-text>Belum punya akun?</v-text>
+              <v-btn round v-on:click="register()" class="ml-1">Sign up</v-btn>
               <v-spacer></v-spacer>
               <v-btn round color="orange"  @click.prevent="login()">
                 Login
