@@ -2,6 +2,8 @@
   <v-app>
 
     <MyDashboard></MyDashboard>
+    <MyFooter></MyFooter>
+
 
     
   </v-app>
@@ -10,13 +12,15 @@
 <script>
 
 import MyDashboard from '../components/MyDashboard.vue'
+import MyFooter from '../components/MyFooter.vue'
 
   export default {
     name: 'HomeView',
 
     components: {
-        // MyNavbar,
+
         MyDashboard,
+        MyFooter
 
       
 
