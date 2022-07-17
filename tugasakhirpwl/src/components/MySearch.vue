@@ -4,7 +4,7 @@
     <v-row class="mx-16 mt-15 card">
         <v-col cols="12" sm="3" v-for="item in filteredProducts" :key="item.id">
             <v-hover v-slot:default="{hover}">
-                <v-card height="400" align="center" flat outlined tile>
+                <v-card height="450" align="center" flat outlined tile>
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color="black" small dark>Rp {{item.harga.toLocaleString("id-ID")}}</v-btn>
@@ -13,6 +13,11 @@
                     <v-card-text class="mt-n4">
                         <strong :class="hover ? 'red--text' : 'black--text'">{{item.judul}}</strong>
                     </v-card-text>
+                    <v-rating class="mb-2"
+                            background-color="orange lighten-3"
+                            half-increments
+                            color="orange"
+                            :value= "item.rating"></v-rating>
                     <v-card-text class="mt-n7">
                         <strong :class="hover ? 'red--text' : 'black--text'">Penulis: {{item.penulis}}</strong>
                     </v-card-text>
@@ -36,7 +41,7 @@ export default{
     data(){
         return{
             products:[],
-      
+            rating: this.products.rating,
             search: this.$store.state.search
         }
         

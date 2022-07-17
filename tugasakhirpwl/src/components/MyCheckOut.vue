@@ -109,6 +109,8 @@ export default {
                 total: this.totalPrice
 
             }
+
+
             if(this.penerima != "" && this.alamat != ""){
 
                 if(this.isLogin == null){
@@ -127,7 +129,6 @@ export default {
             else{
               alert("Nama penerima atau Alamat masih kosong")
             }
-
 
 
         }

@@ -59,15 +59,14 @@ export default new Vuex.Store({
         return product.id == item.id
       })
 
-      console.log("ID",item.id)
       
       if(productInChart){
         productInChart.quantity +=1
-        console.log(productInChart, "PPPPPPP")
+  
         return
       }
       else{
-        console.log(productInChart, "YYYYY")
+        
         state.cart.push({...item,quantity:1})
       }
 
@@ -103,6 +102,7 @@ export default new Vuex.Store({
      
     }
   },
+  
   actions: {
 
      addProductToCart({commit}, item){
